@@ -1,8 +1,16 @@
+import "../lib/env";
+import { ThemeProvider } from "@/components/theme-provider";
+import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Lato } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const lato = Lato({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "700", "900"],
+
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +24,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={lato.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ClerkProvider>
+            {children}
+          </ClerkProvider>
+        </ThemeProvider>
+
+      </body>
     </html>
   );
 }
