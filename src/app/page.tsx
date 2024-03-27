@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
+import { auth } from "@clerk/nextjs";
 import Link from "next/link";
 
-export default function Home() {
+export default async function Root() {
+	const { userId } = auth()
+
 	return (
 
 		<div className="h-screen w-full dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex flex-col items-center justify-center">
@@ -12,14 +15,14 @@ export default function Home() {
 				className="relative p-4 rounded-md h-screen w-screen">
 				<div className="float-end">
 					<Button asChild>
-						<Link href="/sign-up">Get Started</Link>
+						<Link href={userId ? "/dashboard" : "/sign-up"}>{userId ? "Dashboard" : "Get Started"}</Link>
 					</Button>
 				</div>
 
 				<div className="flex flex-col justify-center items-center h-[90vh] w-[90vw]">
 					<div>
 						<small className="text-base">Fitnex</small>
-						<h1 className="scroll-m-20 text-3xl font-extrabold tracking-tight md:text-5xl">Workout with us</h1>
+						<h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight md:text-7xl">Workout with us</h1>
 					</div>
 					<small className="text-base underline underline-offset-4"> A Fitness Regimine For Everyone</small>
 				</div>
