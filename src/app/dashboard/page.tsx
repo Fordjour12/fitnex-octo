@@ -1,7 +1,5 @@
+import { BentoGridSecondDemo } from "./(component)/bento-grid";
+
 export default function Home() {
-	return (
-		<>
-			<div>Hello Homepage </div>
-		</>
-	);
+	return <BentoGridSecondDemo />;
 }

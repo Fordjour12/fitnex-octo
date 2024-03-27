@@ -7,8 +7,10 @@ export default function DashboardLayout({
 }>) {
 	return (
 		<div className="flex flex-row gap-6">
-			<NavBar />
-			<div>{children}</div>
+			<div className="w-1/12">
+				<NavBar />
+			</div>
+			<div className="w-11/12">{children}</div>
 		</div>
 	);
 }
