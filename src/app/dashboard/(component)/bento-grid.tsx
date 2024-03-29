@@ -4,7 +4,7 @@ import { Ampersand, ArrowDown10, Atom, Sigma } from "lucide-react";
 export function BentoGridSecondDemo() {
 	return (
 		// <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
-		<BentoGrid>
+		<BentoGrid className=" py-7 mx-4 h-screen">
 			{items.map((item, i) => (
 				<BentoGridItem
 					key={i}
@@ -26,7 +26,7 @@ const items = [
 		title: "The Dawn of Innovation",
 		description: "Explore the birth of groundbreaking ideas and inventions.",
 		header: <Skeleton />,
-		className: "md:col-span-2 ",
+		className: "md:col-span-2",
 		icon: <Ampersand className="h-4 w-4 text-neutral-500" />,
 	},
 	{
@@ -40,15 +40,14 @@ const items = [
 		title: "The Art of Design",
 		description: "Discover the beauty of thoughtful and functional design.",
 		header: <Skeleton />,
-		className: "md:col-span-1",
+		className: "md:col-span-1 h-[20rem]",
 		icon: <Sigma className="h-4 w-4 text-neutral-500" />,
 	},
 	{
 		title: "The Power of Communication",
-		description:
-			"Understand the impact of effective communication in our lives.",
+		description: "Understand the impact of effective communication in our lives.",
 		header: <Skeleton />,
-		className: "md:col-span-2",
+		className: "md:col-span-2 h-[20rem]",
 		icon: <Atom className="h-4 w-4 text-neutral-500" />,
 	},
 ];
