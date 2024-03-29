@@ -10,11 +10,11 @@ export function NavBar() {
 					<HomeIcon />
 					<span> Dashboard </span>
 				</Link>
-				<Link href="/dashboard/settings" className="flex gap-3 items-center hover:text-blue-500">
+				<Link href="/settings" className="flex gap-3 items-center hover:text-blue-500">
 					<CogIcon />
 					<span>Settings</span>
 				</Link>
-				<Link href="/dashboard/analytics" className="flex gap-3 items-center hover:text-blue-500">
+				<Link href="/analytics" className="flex gap-3 items-center hover:text-blue-500">
 					<PieChartIcon />
 					<span>Analytics</span>
 				</Link>
