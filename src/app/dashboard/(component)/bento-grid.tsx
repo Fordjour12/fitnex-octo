@@ -7,6 +7,7 @@ export function BentoGridSecondDemo() {
 		<BentoGrid className="grid">
 			{items.map((item, i) => (
 				<BentoGridItem
+					// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 					key={i}
 					title={item.title}
 					description={item.description}
