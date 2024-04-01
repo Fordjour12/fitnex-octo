@@ -4,7 +4,7 @@ import { Ampersand, ArrowDown10, Atom, Sigma } from "lucide-react";
 export function BentoGridSecondDemo() {
 	return (
 		// <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
-		<BentoGrid>
+		<BentoGrid className="grid">
 			{items.map((item, i) => (
 				<BentoGridItem
 					key={i}
@@ -19,7 +19,7 @@ export function BentoGridSecondDemo() {
 	);
 }
 const Skeleton = () => (
-	<div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl   dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black" />
+	<div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black" />
 );
 const items = [
 	{
