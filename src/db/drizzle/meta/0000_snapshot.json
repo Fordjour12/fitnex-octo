@@ -1,11 +1,39 @@
 {
-  "id": "b4aec470-8e2e-454b-8b01-e8ef44717361",
+  "id": "7219d9aa-ff9d-4f55-b596-4ef2e7c9e26e",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
   "tables": {
-    "testing_user": {
-      "name": "testing_user",
+    "equipments": {
+      "name": "equipments",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "equipments_type": {
+          "name": "equipments_type",
+          "type": "equipmentType",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "description": {
+          "name": "description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "user": {
+      "name": "user",
       "schema": "",
       "columns": {
         "id": {
@@ -20,8 +48,66 @@
           "primaryKey": false,
           "notNull": true
         },
+        "age": {
+          "name": "age",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
         "email": {
           "name": "email",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "gender": {
+          "name": "gender",
+          "type": "gender",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "height": {
+          "name": "height",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "weight": {
+          "name": "weight",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "workouts": {
+      "name": "workouts",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "workout_name": {
+          "name": "workout_name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "description": {
+          "name": "description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "target_muscles": {
+          "name": "target_muscles",
           "type": "text",
           "primaryKey": false,
           "notNull": true
@@ -33,7 +119,36 @@
       "uniqueConstraints": {}
     }
   },
-  "enums": {},
+  "enums": {
+    "equipmentType": {
+      "name": "equipmentType",
+      "values": {
+        "machine": "machine",
+        "bodyweight": "bodyweight"
+      }
+    },
+    "machineEquipmentType": {
+      "name": "machineEquipmentType",
+      "values": {
+        "cable": "cable",
+        "pulley": "pulley",
+        "smithMachine": "smithMachine",
+        "barbell": "barbell",
+        "KettleBell": "KettleBell",
+        "Dumbbell": "Dumbbell",
+        "LegPress": "LegPress",
+        "LegCurl": "LegCurl",
+        "LegExtension": "LegExtension"
+      }
+    },
+    "gender": {
+      "name": "gender",
+      "values": {
+        "Male": "Male",
+        "Female": "Female"
+      }
+    }
+  },
   "schemas": {},
   "_meta": {
     "columns": {},
