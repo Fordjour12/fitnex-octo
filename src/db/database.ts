@@ -7,15 +7,15 @@ const client = new Client({
     connectionString: process.env.DATABASE_URL,
 
 })
-const main = async () => {
-    await client.connect();
-    console.log("Connected to database");
+// const main = async () => {
+//     await client.connect();
+//     console.log("Connected to database");
 
-    await client.end()
-    console.log("Disconnected from database");
-}
+//     await client.end()
+//     console.log("Disconnected from database");
+// }
 const db = drizzle(client);
 
-main().catch(console.error);
+// main().catch(console.error);
 
 export default db;
